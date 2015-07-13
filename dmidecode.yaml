@@ -1,0 +1,16 @@
+---
+- hosts: remote
+  user: root
+  #connection: local
+
+  tasks:
+    - name: Install dependencies
+      yum: name={{ item }} state=latest
+      with_items:
+        - "{{ dependencies }}"
+
+    - name: Test dmidecode
+      action: dmidecode save=True
+      register: dmi_data
+
+    - debug: var=dmi_data['msg']
