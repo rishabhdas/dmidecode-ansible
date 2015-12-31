@@ -13,3 +13,12 @@ JSON. This uses dmidecode Python API and Ansible Python API. <br/>
 ```sh
 $ ansible-playbook -i hosts dmidecode.yaml
 ```
+
+# pydmidecode.py - API Implementation
+
+- Run ansible playbook programatically using Ansible Python API
+- Render hosts file at runtime using jinja2 template
+
+```sh
+$ python pydmidecode.py
+```
